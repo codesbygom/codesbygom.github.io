@@ -1,0 +1,67 @@
+# ---------------------------------------------------------------------------
+# Site configuration. Available in templates as {{ site.xxx }}.
+# ---------------------------------------------------------------------------
+
+title: "Arash Gholinejad"
+tagline: "Software Engineer"
+description: "Software engineer with hands-on experience in Python and Django."
+
+# Fix this once your repo is live (repo name decides the exact URL, see README):
+url: "https://codesbygom.github.io"   # no trailing slash
+baseurl: ""                            # if repo isn't username.github.io, set "/repo-name"
+
+lang: en
+timezone: Asia/Tehran
+
+# Set to false once you want the site to actually show up in search results.
+noindex: true
+
+author:
+  name: "Arash Gholinejad"
+  email: "arash.m.gholinejad@gmail.com"
+  github: "codesbygom"
+  linkedin: "https://linkedin.com/in/USERNAME"
+
+# Top nav links
+nav:
+  - title: "home"
+    url: /
+  - title: "projects"
+    url: /projects/
+  - title: "articles"
+    url: /articles/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+permalink: /articles/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - start-jekyll.cmd
+  - vendor
+  - node_modules

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <div class="prompt-line">$ cat {{ page.title | slugify }}.md</div>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</div>
+  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<p><a class="back-link" href="{{ '/articles/' | relative_url }}">&larr; cd ../articles</a></p>
