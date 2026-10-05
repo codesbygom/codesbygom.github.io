@@ -8,7 +8,61 @@ permalink: /projects/
 <h1>all projects</h1>
 
 <section class="block">
+  <h2>backend</h2>
   <div class="item">
-    <p>Coming soon — projects will show up here.</p>
+    <div class="item-title">IMDB — movie &amp; series API</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/ASP.NET-IMDB-WebAPI" target="_blank" rel="noopener">GitHub</a></div>
+    <p>IMDb-style movie and series API on ASP.NET Core 8 using Clean Architecture and tactical DDD (aggregates, value objects, invariant-enforcing entities); 45 MediatR commands and queries, ASP.NET Identity with JWT and role-based access, EF Core migrations, xUnit tests and GitHub Actions CI.</p>
+    <div class="item-meta">C# · ASP.NET Core · MediatR · EF Core · SQL Server · xUnit · Docker</div>
+  </div>
+  <div class="item">
+    <div class="item-title">ProductKrait — e-commerce platform</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/productkrait" target="_blank" rel="noopener">GitHub</a> · <a href="https://codesbygom.pythonanywhere.com/" target="_blank" rel="noopener">Live demo</a></div>
+    <p>E-commerce platform built with Django: product catalog with categories, shopping cart, orders, payments and email OTP verification, a staff dashboard for product and order management, and a JWT-secured REST API (DRF) documented with Swagger/ReDoc.</p>
+    <div class="item-meta">Python · Django · DRF · JWT · Docker</div>
+  </div>
+  <div class="item">
+    <div class="item-title">AdderHub — social network</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/adderhub" target="_blank" rel="noopener">GitHub</a> · <a href="https://arashmgn76.pythonanywhere.com/" target="_blank" rel="noopener">Live demo</a></div>
+    <p>Instagram-style social network built with Django, served as server-rendered pages and a JWT-secured REST API (DRF) from one codebase; image posts, likes, comments, follow/unfollow and user search, with Redis caching, UUID keys and automated tests.</p>
+    <div class="item-meta">Python · Django · DRF · Redis · Docker</div>
+  </div>
+  <div class="item">
+    <div class="item-title">Store Management — retail API</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/ASP.NET-Store-Management" target="_blank" rel="noopener">GitHub</a></div>
+    <p>Store REST API on ASP.NET Core 8 split into Domain, Application, Infrastructure, Persistence and Web API layers; JWT authentication with PBKDF2-hashed passwords, a filterable, paginated catalog and stock-validated orders saved atomically; EF Core migrations and GitHub Actions CI.</p>
+    <div class="item-meta">C# · ASP.NET Core · EF Core · SQL Server · AutoMapper · Docker</div>
+  </div>
+  <div class="item">
+    <div class="item-title">Auth Service (MongoDB)</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/ASP.NET-WebAPI-MongoDB" target="_blank" rel="noopener">GitHub</a></div>
+    <p>Authentication and user-management API on ASP.NET Core 8 with Clean Architecture and MongoDB (unique username and email indexes): JWT with role claims, PBKDF2 hashing, owner-or-admin authorization and Problem Details errors.</p>
+    <div class="item-meta">C# · ASP.NET Core · MongoDB · JWT · Docker</div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>game development</h2>
+  <div class="item">
+    <div class="item-title">Kitchen Chaos — Unity game</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/Kitchen-Chaos" target="_blank" rel="noopener">GitHub</a> · <a href="https://codesnmeshes.itch.io/kitchen-chaos" target="_blank" rel="noopener">Play on itch.io</a></div>
+    <p>Overcooked-style cooking game in Unity 6, built by following a structured course and published on itch.io: Input System player controls, data-driven recipes with ScriptableObjects, and state machines.</p>
+    <div class="item-meta">C# · Unity 6 · URP · Input System · TextMesh Pro</div>
+  </div>
+  <div class="item">
+    <div class="item-title">Unified Inventory Framework (in progress)</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/Unified-Inventory-Framework" target="_blank" rel="noopener">GitHub</a></div>
+    <p>Reusable grid-inventory system for Unity, designed as an installable UPM package with separate Runtime, Editor and Tests assemblies: one core for single-cell, multi-cell and irregular-shape inventories, with rotation, save/load and mouse/gamepad input, kept independent of the UI so it can be unit-tested.</p>
+    <div class="item-meta">C# · Unity · Unity Test Framework · UPM</div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>open source</h2>
+  <div class="item">
+    <div class="item-title">DS4Windows (fork) — PR open</div>
+    <div class="item-meta"><a href="https://github.com/codesbygom/DS4Windows5" target="_blank" rel="noopener">GitHub</a></div>
+    <p>Fixed a PresetIntroText localization key casing mismatch; contributing upstream fixes to a community-maintained controller driver.</p>
+    <div class="item-meta">C# · open source</div>
   </div>
 </section>
