@@ -533,6 +533,8 @@ section.block {
   .item-title { font-weight: 700; color: var(--text); }
   .item-meta { color: var(--text-dim); font-size: .82rem; margin-bottom: 4px; }
   p { margin: 6px 0 0; color: var(--text); }
+  ul { margin: 4px 0 6px; padding-inline-start: 18px; color: var(--text); }
+  li { margin-bottom: 2px; }
 }
 
 .skills {
@@ -631,7 +633,7 @@ section.block {
 
 /* ---------- print (used by the "download resume.pdf" button) ---------- */
 @media print {
-  .crt, .titlebar-top, .sidebar, .breadcrumb, .resume-window, .site-footer,
+  .crt, .titlebar-top, .sidebar, .breadcrumb, .resume-window, .side-windows, .site-footer,
   .boot-overlay, .desktop-icons, .taskbar { display: none !important; }
 
   html, body {
@@ -679,3 +681,23 @@ section.block {
   }
   .contact-links svg { color: #000 !important; }
 }
+
+.resume-window .resume-view { display: block; margin-top: 8px; text-align: center; font-size: .72rem; color: var(--text-dim); text-decoration: none; }
+.resume-window .resume-view:hover { color: var(--text); text-decoration: underline; }
+
+/* resume + portfolio windows stacked in the right-hand column */
+.side-windows {
+  display: none;
+  position: fixed;
+  top: calc(var(--topbar-h) + 20px);
+  right: 30px;
+  z-index: 3;
+  width: 210px;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 1150px) {
+  .side-windows { display: flex; }
+}
+.side-windows .resume-window { position: static; display: block; width: 100%; }
+.side-windows .resume-window.closed { display: none; }
