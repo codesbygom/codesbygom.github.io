@@ -4,7 +4,7 @@
 
 title: "Arash Gholinejad"
 tagline: "Software Engineer"
-description: "Software engineer with hands-on experience in Python and Django."
+description: "Backend developer working in both C#/.NET and Python."
 
 # Fix this once your repo is live (repo name decides the exact URL, see README):
 url: "https://codesbygom.github.io"   # no trailing slash
@@ -20,7 +20,7 @@ author:
   name: "Arash Gholinejad"
   email: "arash.m.gholinejad@gmail.com"
   github: "codesbygom"
-  linkedin: "https://linkedin.com/in/USERNAME"
+  linkedin: "https://www.linkedin.com/in/arash1997/"
 
 # Top nav links
 nav:
