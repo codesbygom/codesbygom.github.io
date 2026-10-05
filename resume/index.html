@@ -1,19 +1,19 @@
 <!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Arash MohammadGholinejad — Resume</title>
 <style>
-@page{size:A4;margin:10mm 16mm 8mm}
+@page{size:A4;margin:9mm 16mm 7mm}
 *{box-sizing:border-box}
-body{font-family:"Liberation Sans",Arial,Helvetica,sans-serif;color:#222;font-size:8.1pt;line-height:1.25;margin:0}
+body{font-family:"Liberation Sans",Arial,Helvetica,sans-serif;color:#222;font-size:8.1pt;line-height:1.22;margin:0}
 a{color:#2561b3;text-decoration:none}
 h1{font-size:17pt;margin:0 0 4pt;color:#111}
 .role{color:#2561b3;font-weight:700;font-size:9.6pt;margin-bottom:3pt}.role .sep{color:#555;font-weight:400}
 .contact{font-size:7.8pt;color:#444}.contact .bar{color:#aaa;margin:0 4pt}
-h2{font-size:9.6pt;color:#1d3f7a;letter-spacing:.3pt;border-bottom:.8pt solid #1d3f7a;padding-bottom:1.5pt;margin:8pt 0 3.5pt}
+h2{font-size:9.6pt;color:#1d3f7a;letter-spacing:.3pt;border-bottom:.8pt solid #1d3f7a;padding-bottom:1.5pt;margin:6.5pt 0 3pt}
 p{margin:0}
-.job{margin-top:4pt}.jh{display:flex;justify-content:space-between;align-items:baseline}
+.job{margin-top:3pt}.jh{display:flex;justify-content:space-between;align-items:baseline}
 .jh b{color:#111}.co{color:#2561b3;font-weight:700}.dot{color:#666;margin:0 3pt}
 .dates{font-size:7.8pt;color:#555}
 ul{margin:2pt 0 0;padding-left:14pt}li{margin:0}
-.proj{margin-top:3.5pt}.proj .t{font-weight:700;color:#111}.proj .t a{font-weight:400;font-size:7.8pt}
+.proj{margin-top:3pt}.proj .t{font-weight:700;color:#111}.proj .t a{font-weight:400;font-size:7.8pt}
 .tech{font-size:7.2pt;color:#555;margin-top:1pt}
 .sk p{margin-bottom:1.5pt}.sk b{color:#111}
 .edu b{color:#111}.edu .u{color:#2561b3;font-weight:700}.small{font-size:7.8pt;color:#555}
@@ -32,10 +32,10 @@ ul{margin:2pt 0 0;padding-left:14pt}li{margin:0}
 
 <h2>EXPERIENCE</h2>
 <div class="job"><div class="jh"><span><b>Software Engineer</b><span class="dot">·</span><span class="co">Metable</span></span><span class="dates">Dec 21, 2024 – Jun 21, 2026</span></div>
-<ul><li>Developed and maintained the company's software products.</li></ul></div>
+<ul><li>Developed the backend of a multi-tenant IoT telemetry platform: a REST API (Django REST Framework, JWT) for users, projects, devices and telemetry data, alongside an MQTT broker for device connectivity.</li><li>Built the MQTT ingestion pipeline with per-device authentication and topic-level access control, validating incoming messages and buffering them in Redis before batched writes to PostgreSQL.</li><li>Implemented background processing with Celery (alert rules and notifications, offline-device detection, CSV export) and pushed live data to the web dashboard over WebSockets.</li><li>Wrote unit and integration tests and containerized the services with Docker.</li></ul></div>
 <div class="job"><div class="jh"><span><b>Software Engineer</b><span class="dot">·</span><span class="co">Hamkaran System</span></span><span class="dates">Jul 24, 2024 – Dec 20, 2024</span></div>
 <ul><li>Developed and maintained enterprise (ERP) applications on the in-house Rahkaran framework.</li><li>Worked within existing enterprise systems, implementing and maintaining business functionality.</li></ul><div class="tech">C# · ASP.NET</div></div>
-<div class="job"><div class="jh"><span><b>Software Engineer</b><span class="dot">·</span><span class="co">Alborz Afraz Tabarestan (Dornica)</span></span><span class="dates">Jul 23, 2023 – Jun 20, 2024</span></div>
+<div class="job"><div class="jh"><span><b>Software Engineer</b><span class="dot">·</span><span class="co">Alborz Afraz Tabarestan (Dornica)</span></span><span class="dates">Jul 23, 2023 – Jul 21, 2024</span></div>
 <ul><li>Developed and maintained backend services and RESTful APIs.</li><li>Designed and implemented an API Gateway service for centralized API management, routing and integration across services.</li><li>Built an online ArcGIS validation service and ArcGIS plugins for automated data/config validation and GIS workflows.</li><li>Refactored and modernized multiple projects, improving architecture, performance and maintainability.</li></ul><div class="tech">Python · FastAPI · Celery</div></div>
 <div class="job"><div class="jh"><span><b>Software Engineer</b><span class="dot">·</span><span class="co">Zarebin (Hamrah Aval Internship)</span></span><span class="dates">Oct 2022 – Feb 2023</span></div>
 <ul><li>Developed and maintained backend services.</li><li>Designed and implemented RESTful APIs and managed database operations.</li></ul><div class="tech">Python · Django</div></div>
@@ -64,7 +64,7 @@ ul{margin:2pt 0 0;padding-left:14pt}li{margin:0}
 <p><b>Principles &amp; Practices:</b> OOP, SOLID, Design Patterns, TDD, Refactoring</p></div>
 
 <h2>EDUCATION</h2>
-<div class="edu"><b>B.S. in Computer Engineering</b><br><span class="u">Babol Noshirvani University of Technology</span><br><span class="small">2016 – 2021</span><br>Served as a teaching assistant for programming courses.</div>
+<div class="edu"><b>B.S. in Computer Engineering</b><span class="dot">·</span><span class="u">Babol Noshirvani University of Technology</span> <span class="small">(2016 – 2021)</span><br>Served as a teaching assistant for programming courses.</div>
 
 <h2>COURSES AND CERTIFICATES</h2>
 <p><b>Machine Learning Specialization</b> — Coursera, Feb 2024 <span class="bar" style="color:#aaa;margin:0 4pt">|</span> <a href="https://www.coursera.org/account/accomplishments/specialization/46R8XJMLLS26">Certificate</a></p>

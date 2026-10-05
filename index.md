@@ -42,7 +42,7 @@ resume_action: true
 
   <div class="item">
     <div class="item-title">Software Engineer — Alborz Afraz Tabarestan (Dornica)</div>
-    <div class="item-meta">Jul 23, 2023 – Jun 20, 2024</div>
+    <div class="item-meta">Jul 23, 2023 – Jul 21, 2024</div>
     <ul>
       <li>Developed and maintained backend services and RESTful APIs.</li>
       <li>Designed and implemented an API Gateway service for centralized API management, routing and integration across services.</li>
