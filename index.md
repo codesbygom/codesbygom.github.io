@@ -24,7 +24,7 @@ resume_action: true
 
   <div class="item">
     <div class="item-title">Software Engineer — Metable</div>
-    <div class="item-meta">Dec 21, 2024 – Sep 22, 2026</div>
+    <div class="item-meta">Dec 21, 2024 – Jun 21, 2026</div>
     <ul>
       <li>Developed and maintained the company's software products.</li>
     </ul>
