@@ -306,16 +306,6 @@
   .decision b { display: block; font-size: 13px; color: var(--text); margin-bottom: 2px; }
   .decision span { font-size: 13px; color: var(--text-dim); }
 
-  .snippet-note { font-size: 12px; color: var(--text-faint); margin: 0 0 8px; font-style: italic; }
-  pre.code {
-    margin: 0; padding: 14px 16px; background: var(--ink-900); border: 1px solid var(--line);
-    border-radius: 6px; overflow-x: auto; font-family: "JetBrains Mono"; font-size: 11.8px;
-    color: #c9d6e3; line-height: 1.55;
-  }
-  pre.code .kw { color: #e3a548; }
-  pre.code .tp { color: #7fb4c2; }
-  pre.code .cm { color: var(--text-faint); }
-  pre.code .str { color: #a8c98a; }
 
   @media (max-width: 860px) {
     nav.links { display: none; }
@@ -615,7 +605,7 @@
     <div class="sec-head">
       <div class="eyebrow">// how it's built</div>
       <h2>Two projects, closer look</h2>
-      <p>The résumé says what these do. This is closer to how — the layers, the calls I made on the way, and the pattern behind them.</p>
+      <p>The résumé says what these do. This is closer to how — the layers and the calls I made on the way.</p>
     </div>
 
     <div class="case">
@@ -638,42 +628,14 @@
             <div class="arch-arrow">→</div>
             <div class="arch-node"><b>Infrastructure</b>EF Core migrations → SQL Server</div>
           </div>
-          <div style="height:18px"></div>
+        </div>
+        <div class="case-col">
           <h4>DECISIONS</h4>
           <div class="decisions">
             <div class="decision"><b>CQRS over one service per controller</b><span>Splitting reads and writes into MediatR handlers kept 45 operations organized as the API grew, instead of a handful of bloated services.</span></div>
             <div class="decision"><b>Invariants on the aggregate, not the API</b><span>Validation lives inside the entities, so an illegal state is impossible to construct — not just rejected at the edge by a filter.</span></div>
             <div class="decision"><b>Tests aimed at behaviour, not endpoints</b><span>xUnit tests exercise domain rules and handlers directly, so a broken invariant fails fast without spinning up the whole API to notice.</span></div>
           </div>
-        </div>
-        <div class="case-col">
-          <h4>THE PATTERN</h4>
-          <p class="snippet-note">A simplified version of the invariant-enforcing entities used across IMDB's aggregates:</p>
-          <pre class="code"><span class="kw">public sealed class</span> <span class="tp">Movie</span> : AggregateRoot
-{
-    <span class="kw">private readonly</span> List&lt;CastMember&gt; _cast = <span class="kw">new</span>();
-
-    <span class="kw">public static</span> Result&lt;Movie&gt; Create(
-        <span class="tp">string</span> title, DateOnly releaseDate, Rating rating)
-    {
-        <span class="kw">if</span> (releaseDate &gt; DateOnly.FromDateTime(DateTime.UtcNow))
-            <span class="kw">return</span> Result&lt;Movie&gt;.Fail(
-                <span class="str">"Release date cannot be in the future."</span>);
-
-        <span class="kw">return</span> Result&lt;Movie&gt;.Ok(<span class="kw">new</span> Movie(title, releaseDate, rating));
-    }
-
-    <span class="kw">public void</span> AddCastMember(CastMember member)
-    {
-        <span class="kw">if</span> (_cast.Any(c =&gt; c.PersonId == member.PersonId))
-            <span class="kw">throw new</span> DomainException(
-                <span class="str">"This person is already cast in the movie."</span>);
-
-        _cast.Add(member);
-        RaiseDomainEvent(<span class="kw">new</span> CastMemberAddedEvent(Id, member.PersonId));
-    }
-}
-</pre>
         </div>
       </div>
     </div>
@@ -699,40 +661,14 @@
             <div class="arch-down">↓</div>
             <div class="arch-node"><b>Data</b>Django ORM → database, Redis in front of the feed query</div>
           </div>
-          <div style="height:18px"></div>
+        </div>
+        <div class="case-col">
           <h4>DECISIONS</h4>
           <div class="decisions">
             <div class="decision"><b>One codebase, two front doors</b><span>The website and the API call the same service functions, so a rule about the feed only has to be right once.</span></div>
             <div class="decision"><b>Redis in front of the feed, not the whole app</b><span>The following/explore feed is the most repeated read by far, so it's the one thing cached — not a blanket cache over everything.</span></div>
             <div class="decision"><b>UUID keys on public-facing models</b><span>Post and profile IDs don't leak how many users or posts exist, without touching anything else in the schema.</span></div>
           </div>
-        </div>
-        <div class="case-col">
-          <h4>THE PATTERN</h4>
-          <p class="snippet-note">A simplified version of the shared service layer behind both front doors:</p>
-          <pre class="code"><span class="kw">class</span> <span class="tp">FeedService</span>:
-    <span class="cm">"""Shared by the server-rendered view and the DRF
-    endpoint -- one place decides what's in a feed."""</span>
-
-    <span class="kw">def</span> __init__(<span class="kw">self</span>, cache):
-        <span class="kw">self</span>.cache = cache
-
-    <span class="kw">def</span> get_following_feed(<span class="kw">self</span>, user, page=<span class="str">1</span>):
-        key = <span class="str">f"feed:{user.id}:{page}"</span>
-        <span class="kw">if</span> cached := <span class="kw">self</span>.cache.get(key):
-            <span class="kw">return</span> cached
-
-        posts = (
-            Post.objects
-            .filter(author__in=user.following.all())
-            .select_related(<span class="str">"author"</span>)
-            .prefetch_related(<span class="str">"likes"</span>, <span class="str">"comments"</span>)
-            .order_by(<span class="str">"-created_at"</span>)
-        )
-        page_obj = paginate(posts, page)
-        <span class="kw">self</span>.cache.set(key, page_obj, timeout=<span class="str">60</span>)
-        <span class="kw">return</span> page_obj
-</pre>
         </div>
       </div>
     </div>
