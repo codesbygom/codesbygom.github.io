@@ -37,7 +37,7 @@ resume_action: true
       <li>Developed and maintained enterprise (ERP) applications on the in-house Rahkaran framework.</li>
       <li>Worked within existing enterprise systems, implementing and maintaining business functionality.</li>
     </ul>
-    <div class="item-meta">C# · ASP.NET</div>
+    <div class="item-meta">C# · .NET</div>
   </div>
 
   <div class="item">
