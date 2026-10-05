@@ -32,7 +32,7 @@ resume_action: true
 
   <div class="item">
     <div class="item-title">Software Engineer — Hamkaran System</div>
-    <div class="item-meta">Jul 24, 2024 – Dec 20, 2024</div>
+    <div class="item-meta">Jul 22, 2024 – Dec 20, 2024</div>
     <ul>
       <li>Developed and maintained enterprise (ERP) applications on the in-house Rahkaran framework.</li>
       <li>Worked within existing enterprise systems, implementing and maintaining business functionality.</li>
