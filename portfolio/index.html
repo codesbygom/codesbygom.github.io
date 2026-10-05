@@ -81,7 +81,7 @@
   .btn-sm { padding: 7px 12px; font-size: 12.5px; }
 
   /* ---------- hero ---------- */
-  .hero { padding: 76px 0 64px; }
+  .hero { padding: 44px 0 36px; }
   .hero-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; }
   .kicker {
     display: inline-flex; align-items: center; gap: 8px;
@@ -148,8 +148,8 @@
   .stat .l { font-size: 12.5px; color: var(--text-dim); margin-top: 4px; }
 
   /* ---------- sections ---------- */
-  section { padding: 84px 0; }
-  .sec-head { margin-bottom: 40px; max-width: 640px; }
+  section { padding: 44px 0; }
+  .sec-head { margin-bottom: 22px; max-width: 640px; }
   .sec-head .eyebrow { font-family: "JetBrains Mono"; font-size: 12.5px; color: var(--cyan); margin-bottom: 10px; }
   .sec-head h2 { font-size: 28px; margin: 0 0 12px; font-weight: 700; }
   .sec-head p { color: var(--text-dim); font-size: 15px; margin: 0; }
@@ -253,9 +253,9 @@
 
   /* contact / footer */
   footer {
-    border-top: 1px solid var(--line); background: var(--ink-800); padding: 64px 0 40px;
+    border-top: 1px solid var(--line); background: var(--ink-800); padding: 40px 0 28px;
   }
-  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; margin-bottom: 56px; }
+  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start; margin-bottom: 32px; }
   footer h2 { font-size: 26px; margin: 0 0 14px; }
   footer p.sub { color: var(--text-dim); font-size: 15px; max-width: 440px; margin: 0 0 24px; }
   .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -338,8 +338,10 @@
     header.site { position: static; }
     .navcta, [data-download] { display: none !important; }
     a[href^="#"]::after { content: none; }
-    section { padding: 36px 0; break-inside: avoid-page; }
-    .case, .proj-card, .oss-row, .edu-card, .stackcard { break-inside: avoid; }
+    section { padding: 16px 0; }
+    .proj-card, .oss-row, .edu-card, .stackcard, .decision, pre { break-inside: avoid; }
+    .sec-head, h2, h3, h4 { break-after: avoid; break-inside: avoid; }
+    .foot-bottom { display: none !important; }
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
@@ -385,7 +387,7 @@
 
     <div class="stacks">
       <div class="stackcard dotnet">
-        <div class="head"><span>C# / ASP.NET Core</span><span>REQUEST →</span></div>
+        <div class="head"><span>C# / ASP.NET Core</span></div>
         <div class="layers">
           <div class="layer l1"><b>Web API</b> — controllers, JWT auth</div>
           <div class="layer l2"><b>Application</b> — MediatR (CQRS)</div>
@@ -394,7 +396,7 @@
         </div>
       </div>
       <div class="stackcard python">
-        <div class="head"><span>Python / Django</span><span>REQUEST →</span></div>
+        <div class="head"><span>Python / Django</span></div>
         <div class="layers">
           <div class="layer l1"><b>DRF views</b> — JWT auth, serializers</div>
           <div class="layer l2"><b>Services</b> — business logic</div>
@@ -411,10 +413,10 @@
   <div class="wrap about-wrap">
     <div>
       <div class="eyebrow">// about</div>
-      <h2 style="font-size:28px; margin:0;">From ML coursework to production backends</h2>
+      <h2 style="font-size:28px; margin:0;">Building backends that hold up</h2>
     </div>
     <div>
-      <p>I studied Computer Engineering and got into machine learning and deep learning along the way, through coursework and a lot of self-study. Backend development is where I ended up, because it's the work I actually enjoy doing every day: figuring out how a system should fit together and then making it hold up.</p>
+      <p>I studied Computer Engineering and went into backend development because it's the work I actually enjoy doing every day: figuring out how a system should fit together and then making it hold up.</p>
       <p><strong>What keeps me interested is the hard part.</strong> I like problems without an obvious answer, and I'll stay with one until I understand it properly, not just until the error goes away. I learn quickly when a project needs something I don't know yet. Outside of work I keep my projects public on GitHub from the first commit, and when I find a bug in an open-source tool I use, I send the fix to the original project instead of only patching my own copy.</p>
     </div>
   </div>
@@ -767,10 +769,6 @@
         <div class="yr">2016 – 2021</div>
         <p>Served as a teaching assistant for programming courses.</p>
       </div>
-    </div>
-    <div class="certs">
-      <span class="cert-pill"><b>Machine Learning Specialization</b> — Coursera, Feb 2024</span>
-      <span class="cert-pill"><b>Deep Learning Specialization</b> — Coursera, Mar 2024</span>
     </div>
   </div>
 </section>
