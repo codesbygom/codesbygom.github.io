@@ -407,7 +407,8 @@ a:hover { text-decoration: underline; text-shadow: 0 0 8px var(--accent); }
     margin-bottom: 10px;
   }
 
-  button {
+  button, .dl-btn {
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -424,7 +425,7 @@ a:hover { text-decoration: underline; text-shadow: 0 0 8px var(--accent); }
     cursor: pointer;
     animation: pulseGlow 1.6s ease-in-out infinite;
   }
-  button:hover {
+  button:hover, .dl-btn:hover {
     animation: none;
     color: #fff;
     background: #ff5fa3;
