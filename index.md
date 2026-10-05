@@ -122,5 +122,15 @@ resume_action: true
     <div class="item-title">B.Sc. in Software Engineering — Babol Noshirvani University of Technology</div>
     <div class="item-meta">Sep 2016 – Jan 2021</div>
   </div>
+
+  <div class="item">
+    <div class="item-title">Machine Learning Specialization — Coursera</div>
+    <div class="item-meta">Feb 2024 · <a href="https://www.coursera.org/account/accomplishments/specialization/46R8XJMLLS26" target="_blank" rel="noopener">Certificate</a></div>
+  </div>
+
+  <div class="item">
+    <div class="item-title">Deep Learning Specialization — Coursera</div>
+    <div class="item-meta">Mar 2024 · <a href="https://www.coursera.org/account/accomplishments/verify/Q7S0V14SWA5G" target="_blank" rel="noopener">Certificate</a></div>
+  </div>
 </section>
 
